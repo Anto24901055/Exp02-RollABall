@@ -1,80 +1,81 @@
 # Exp02-RollABall
-# Exp02-RollABall
-Developed by: Anto Williams S
-Register number: 212224240012
-# Aim:
-To develop a 3D application for Roll A Ball in unity.
+## DEVELOPED BY : Anto Williams S
+## REG NO : 212224240012 
+## AIM :
+ To Roll a Ball using C# program in unity .
+## ALGORITHM 
+## Step 1 :
+Open Unity and create a New Project.
 
-# Procedure:
-# Step1:
-Create a new project.
+## Step 2 :
+In the Hierarchy, right-click and select 3D Object > Plane, select 3D Object > Sphere (this will be your rolling ball).
 
-# Step 2:
-Click Heirarchy -> 3D object -> Select the plane -> 3DObject -> Sphere.
+## Step 3 :
+Add a Rigidbody component to the ball:
+Select Player in the Hierarchy and In the Inspector, click Add Component > Search for Rigidbody > Add it.
 
-# Step 3:
-Define the physics properties of the surface (Rigidbody).
+## Step 4 :
+Assets -> Create -> # Script 
 
-# Step 4:
-Assets -> Create -> # Script
-
-# Step 5:
+## Step 5 :
 Create a folder name Coding and create a C# file to add the coding in it.
 
-# Step 6:
-To add our C# Script file to our selected object, click on the C# Script file and drag it to our selected objects in the Hierarchy window nad run the application.
+## Step 6 :
+To attach the C# script to a selected object, click on the script file and drag it onto the desired object in the Hierarchy window, then run the application.
 
-# Step 7:
-Stop.
+## Step 7 :
+Play the Game – Control the ball using Arrow Keys or WASD.
 
-# Program:
-```
+## Step 8 :
+Stop
+
+## PROGRAM :
+
+~~~c#
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Code : MonoBehaviour
+public class NewMonoBehaviour : MonoBehaviour
 {
-    public float Xforce =5.0f;
-       public float Zforce =5.0f;
-       public float Yforce =100.0f; 
+    public float xForce = 5.0f;
+    public float zForce = 5.0f;
+    public float yForce = 100.0f;
     // Start is called before the first frame update
     void Start()
-    {
-       
+    {     
     }
-
     // Update is called once per frame
     void Update()
     {
-        float X=0.0f,Y=0.0f,Z=0.0f;
-        if(Input.GetKey(KeyCode.A))
+        float x = 0.0f, y = 0.0f, z = 0.0f;
+        if (Input.GetKey(KeyCode.A))
         {
-            X=X-Xforce;
-
+            x = x - xForce;
         }
-        if(Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            X=X+Xforce;
+            x = x + xForce;
         }
-        if(Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.W))
         {
-            Z=Z-Zforce;
+            z = z - zForce;
         }
-        if(Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.X))
         {
-            Z=Z+Zforce;
+            z = z + zForce;
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Y=Yforce;
+            y = yForce;
         }
-        GetComponent<Rigidbody>().AddForce(X,Y,Z);
+        GetComponent<Rigidbody>().AddForce(x,y,z);
     }
 }
-```
+~~~
 
-# Output:
+## OUTPUT :
 ![alt text](image.png)
-# Result:
-Thus, a 3D application for RollABall objects in unity is developed successfully.
+
+## Result
+Thus the experiment was successful. The ball moved as expected using Rigidbody physics and force-based movement.
